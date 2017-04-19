@@ -2,6 +2,7 @@ module.exports = (function() {
   "use strict";
   const fs = require("fs");
   function databot(input, output, context) {
+    output.debug("databot");
     const outputFilePath = output.generateFileStorePath("json");
      // Create the output stream.
     const destStream = fs.createWriteStream(outputFilePath, {flags: input.appendOutput ? "a" : "w"});
@@ -13,7 +14,7 @@ module.exports = (function() {
     } else if (input.databotType === "demand") {
       databotType = require("./lib/demand-databot");
     } else {
-      output.debug("NOT valid databotType input");
+      output.abort("NOT valid databotType input");
     }
 
     // the UUID of areaServiceDataset

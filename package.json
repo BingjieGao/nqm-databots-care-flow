@@ -19,5 +19,9 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "nqm-api-tdx": "^0.1.38"
+  },
+  "devDependencies": {
+    "nqm-databot-utils": "^0.1.22",
+    "yauzl": "^2.7.0"
   }
 }
