@@ -2,7 +2,7 @@ module.exports = (function() {
   "use strict";
 
   return {
-    tdxHost: "https://tdx.nqminds.com",
+    tdxHost: "https://q.nq-m.com",
     // poplet databot
     // serviceRatio case
     inputs: {
@@ -17,6 +17,6 @@ module.exports = (function() {
       boundaryLookup: "B1eUF5s2Ul",
       patientsMapping: "H1xiygRDBl",
     },
-    fileStorePath: "./jsonFiles",
+    fileStorePath: "jsonFiles",
   };
 }());
