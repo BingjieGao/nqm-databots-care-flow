@@ -3,9 +3,10 @@ module.exports = (function() {
   const fs = require("fs");
   function databot(input, output, context) {
     // just for local test if generated json file is corret
-    // output.setFileStorePath("./jsonFiles");
+    output.setFileStorePath("./jsonFiles");
     // Generate the output file based on the given output name input.
-    const outputFilePath = output.generateFileStorePath("json");
+    const outputFilePath = output.getFileStorePath(`${context.instanceId}-output.json`);
+    // const outputFilePath = output.generateFileStorePath("json");
      // Create the output stream.
     const destStream = fs.createWriteStream(outputFilePath, {flags: input.appendOutput ? "a" : "w"});
     // decide to fire areaService poplet databot or areaService demand databot

@@ -78,6 +78,9 @@ module.exports = (configpath) => {
       return path.resolve(_resolvedDatabotStoragePath, targetFile);
     }
   }; 
+  const generateFileStorePath = function(ext) {
+    return getFileStorePath(null, ext);
+  };
 
   let context;
   const output = {
@@ -87,6 +90,7 @@ module.exports = (configpath) => {
     result: writeResult,
     getFileStorePath: getFileStorePath,
     setFileStorePath: setFileStorePath,
+    generateFileStorePath: generateFileStorePath,
   };
 
   const readAndRun = function(cb) {

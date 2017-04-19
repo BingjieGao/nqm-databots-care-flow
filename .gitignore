@@ -39,3 +39,5 @@ jspm_packages
 shortId-generator.js
 # shell script
 run.sh
+# jsonFiles folder
+jsonFiles
