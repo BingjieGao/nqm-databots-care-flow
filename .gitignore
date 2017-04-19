@@ -41,3 +41,7 @@ shortId-generator.js
 run.sh
 # jsonFiles folder
 jsonFiles
+
+#databot test file
+databot-test.js
+index.test.js
