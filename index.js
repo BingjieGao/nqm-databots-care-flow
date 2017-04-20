@@ -9,31 +9,35 @@ module.exports = (function() {
 
     // decide to fire areaService poplet databot or areaService demand databot
     let databotType;
-    if (input.databotType === "poplet") {
-      databotType = require("./lib/behaviour-function-factory");
-    } else if (input.databotType === "demand") {
-      databotType = require("./lib/demandlet-databot");
-    } else {
-      output.abort("NOT valid databotType input");
-    }
-
     // the UUID of areaServiceDataset
     // refers to databot inputs dataset ids
     const areaServiceId = input.areaServiceId;
     const areaServiceDataset = context.packageParams.areaServiceDataset;
+    if (input.databotType === "poplet") {
+      databotType = require("./lib/behaviour-function-factory");
 
-    databotType(areaServiceId, areaServiceDataset, context.tdxApi)
-    .then((databot) => {
-      return databot(input, output, context, destStream);
-    })
-    .then(() => {
-      // destStream.end() is called in each write to file process separately
-      output.debug("output file path is %s", outputFilePath);
-      output.result({outputFilePath: outputFilePath});
-    })
-    .catch((err) => {
-      output.debug(err.message);
-    });
+      // in poplet databot, choose from case-factory in terms of
+      // input dataset schema
+      databotType(areaServiceId, areaServiceDataset, context.tdxApi)
+      .then((databot) => {
+        return databot(input, output, context, destStream);
+      })
+      .then(() => {
+        // destStream.end() is called in each write to file process separately
+        output.debug("output file path is %s", outputFilePath);
+        output.result({outputFilePath: outputFilePath});
+      })
+      .catch((err) => {
+        output.debug(err.message);
+      });
+    } else if (input.databotType === "demand") {
+      databotType = require("./lib/demandlet-databot");
+      // demand databot
+      databotType(input, output, context, destStream);
+    } else {
+      console.log(input.databotType);
+      output.abort("NOT valid databotType input");
+    }
   }
   const input = require("nqm-databot-utils").input;
   input.pipe(databot);

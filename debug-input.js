@@ -3,15 +3,23 @@ module.exports = (function() {
 
   return {
     tdxHost: "https://q.nq-m.com",
+
+
     // poplet databot
     // serviceRatio case
+    // inputs: {
+    //   databotType: "poplet",
+    //   areaServiceId: "B1oGYw7Ae",
+    //   ccgCode: "E38000198", // west hampshire
+    //   behaviourId: "BygEt3RKzg",
+    //   popletData: "BklR9rbICl", // output from poplet databot
+    // },
+
+    // demand databot
     inputs: {
-      databotType: "poplet",
-      areaServiceId: "B1oGYw7Ae",
-      ccgCode: "E38000001",
-      behaviourId: "BygEt3RKzg",
-      popletData: "BklR9rbICl", // output from poplet databot
-      consultationId: "r1lk-gHpmg", // consultation rate
+      databotType: "demand",
+      areaDemandId: "ryC8hg8Cl",  // UUID of areaDemandDataset
+      popletData: "SygXtzSUAx",
     },
     packageParams: {
       areaServiceDataset: "HyxAFvPQAg",
