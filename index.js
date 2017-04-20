@@ -12,7 +12,7 @@ module.exports = (function() {
     if (input.databotType === "poplet") {
       databotType = require("./lib/behaviour-function-factory");
     } else if (input.databotType === "demand") {
-      databotType = require("./lib/demand-databot");
+      databotType = require("./lib/demandlet-databot");
     } else {
       output.abort("NOT valid databotType input");
     }
