@@ -3,6 +3,10 @@ module.exports = (function() {
 
   return {
     tdxHost: "https://q.nq-m.com",
+    shareKeyId: "H1g9B29Ele",
+    shareKeySecret: "1234554321",
+    commandHost: "https://cmd.nq-m.com",
+    queryHost: "https://q.nq-m.com",
 
 
     // poplet databot
@@ -20,6 +24,7 @@ module.exports = (function() {
       databotType: "demand",
       areaDemandId: "ryC8hg8Cl",  // UUID of areaDemandDataset
       popletData: "SygXtzSUAx",
+      popletDataFile: "ByesWfHIRe",
     },
     packageParams: {
       areaServiceDataset: "HyxAFvPQAg",

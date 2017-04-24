@@ -33,6 +33,7 @@ module.exports = (function() {
     } else if (input.databotType === "demand") {
       databotType = require("./lib/demandlet-databot");
       // demand databot
+      // const sourceStream = request.get("https://q.nq-m.com/v1/resource/ByesWfHIRe/preview?");
       databotType(input, output, context, destStream);
     } else {
       console.log(input.databotType);
