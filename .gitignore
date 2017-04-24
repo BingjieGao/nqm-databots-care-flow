@@ -44,4 +44,4 @@ jsonFiles
 
 #databot test file
 databot-test.js
-index.test.js
+secret_config.json
