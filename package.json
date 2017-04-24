@@ -1,5 +1,5 @@
 {
-  "name": "nqm-app-care-flow",
+  "name": "nqm-databots-care-flow",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nqminds/nqm-app-care-flow.git"
+    "url": "git+https://github.com/nqminds/nqm-databots-care-flow.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nqminds/nqm-app-care-flow/issues"
+    "url": "https://github.com/nqminds/nqm-databots-care-flow/issues"
   },
-  "homepage": "https://github.com/nqminds/nqm-app-care-flow#readme",
+  "homepage": "https://github.com/nqminds/nqm-databots-care-flow#readme",
   "dependencies": {
     "bluebird": "^3.5.0",
     "nqm-api-tdx": "^0.1.38"
